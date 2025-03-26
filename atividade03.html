@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Interface com formulário HTML </title>
+     <style type="text/css">
+        .index{
+            width: 100vw;
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .Formulario{
+            border: 2px solid #001e42;
+            padding: 10px;
+            border-radius: 5px;
+            background: #c5d300;
+            text-align: center;
+        }
+        #divResult{
+            margin-left: auto;
+            margin-right: auto;
+
+            height: 18px;
+            width: 150px;
+            background: rgb(240, 0, 0);
+            border: 2px solid rgb(94, 155, 25);
+            box-shadow: 2px 2px 2px rgb(66, 4, 4);
+
+        }
+    </style>
+</head>
+<body>
+    <div class="index">
+    <form class="Formulario">
+        <p> Nota 1: <input type="number" id="digito1"> </p>
+        <p> Nota 2: <input type="number" id="digito2"> </p>
+        <p> Nota 3: <input type="number" id="digito3"> </p>
+        <p><button type="button" onclick="Media()"> Média </button></p>
+        <p>Média:<input type="text" id="result" readonly></p>
+        Situação:<div id="divResult"></div>
+    </form>
+    </div>
+    <script>
+        function Media(){
+            let digito1 = document.getElementById("digito1").value;
+            let digito2 = document.getElementById("digito2").value;
+            let digito3 = document.getElementById("digito3").value;
+            let media = (parseFloat(digito1) + parseFloat(digito2) + parseFloat(digito3))/3;
+            resultado = media;
+            document.getElementById("result").value = resultado;
+           if (media>=6) {
+        document.getElementById("divResult").innerHTML = ("APROVADO!");
+    }else if (media>=3 && media<6) {
+        document.getElementById("divResult").innerHTML = ("INTERVENÇÃO!")
+    }else if (media<3) {
+        document.getElementById("divResult").innerHTML = ("REPROVADO!")
+    }
+        }
+   </script>
+</body>
+</html>

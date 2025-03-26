@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Saída no console do navegador</title>
+</head>
+<body>
+<script>
+	let nota1 = prompt("Digite sua primeira nota: ");
+	let nota2 = prompt("Digite sua segunda nota: ");
+    let nota3 = prompt("Digite sua terceira nota: ");
+    let media = (parseFloat(nota1) + parseFloat(nota2) + parseFloat(nota3))/3;
+    console.log("A média é: "+media)
+    if (media>=6) {
+    	console.log("O aluno está APROVADO!")
+    }else if (media>=3 && media<6) {
+    	console.log("o aluno está de INTERVENÇÃO!")
+    }else if (media<3) {
+    	console.log("O aluno está REPROVADO!")
+    }
+</script>
+</body>
+</html>
